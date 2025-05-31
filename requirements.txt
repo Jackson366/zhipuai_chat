@@ -1,2 +1,3 @@
 openai
-使用openai的流式聊天作为appwrite function的其中功能
+appwrite
+uuid
