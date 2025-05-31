@@ -18,7 +18,7 @@ def main(context):
         # 获取环境变量
         openai_api_key = os.environ.get('OPENAI_API_KEY', '63d72f1ffdad498380426cf9fea99783.lGPa6l8kl9ZXlYkO')
         openai_base_url = os.environ.get('OPENAI_BASE_URL', 'https://open.bigmodel.cn/api/paas/v4/')
-        appwrite_api_key = os.environ.get('APPWRITE_API_KEY', '6801f3ee0031c2b7ac4d')
+        appwrite_project_id = os.environ.get('APPWRITE_PROJECT_ID', '6801f3ee0031c2b7ac4d')
         appwrite_endpoint = os.environ.get('APPWRITE_ENDPOINT', 'https://nyc.cloud.appwrite.io/v1')
         database_id = os.environ.get('DATABASE_ID', '6803573d00249e9a00d8')
         collection_id = os.environ.get('COLLECTION_ID', '6804b7c60030725577bb')
@@ -49,7 +49,7 @@ def main(context):
         appwrite_client = None
         if database_id and collection_id:
             appwrite_client = Client()
-            appwrite_client.set_endpoint(appwrite_endpoint).set_key(appwrite_api_key)
+            appwrite_client.set_endpoint(appwrite_endpoint).set_project(appwrite_project_id)
             databases = Databases(appwrite_client)
         
         # 如果启用流式响应
